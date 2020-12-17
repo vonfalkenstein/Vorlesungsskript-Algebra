@@ -9,10 +9,26 @@
         \item erste Resultate zur Theorie endlicher Gruppen
     \end{itemize}
 
-\begin{defn}[Monoid]\index{Monoid}
+\begin{defn*}[Monoid]\index{Monoid}
     Ein Monoid ist eine Menge $M$ zusammen mit einer Verknüpfung $\circ: M \times M \to M$, die folgende Eigenschaften erfüllt:
     \begin{enumerate}[label={\roman*})]
         \item $\foralll a,b,c \in M$ gilt $(a \circ b) \circ c = a \circ (b \circ c)$
         \item es gibt ein Einselement $e \in M$ mit $e \circ a = a = a \circ e \ \foralll a \in M$
     \end{enumerate}
-\end{defn}
+\end{defn*}
+
+\begin{rem*}
+	$ (\N_{\geq 0},+),(\Q_{\geq 0},+) $ sind Monoide aber keine Gruppe.
+\end{rem*}
+
+\begin{defn*}[Inverselemente]\index{Inverselemente}
+	Sei $ (M,\circ) $ ein Monoid und $a \in M$. Wir nennen $b$ invers zu $a$/\emph{inverses Element} zu $a$, falls $b \circ a = a \circ b = e$.
+\end{defn*}
+
+\begin{rem*}
+	Sind $b, b' \in M$ invers zu $a$, dann ist $b = b'$, denn $b = b \circ e = b \circ (a \circ b') = (b \circ a) \circ b' = e \circ b' = b'$
+\end{rem*}
+
+\begin{exmp*}
+	Im $ (\N_{\geq 0},+) $ ist 0 das einzige Element, das ein inverses Element hat.
+\end{exmp*}
