@@ -1,3 +1,3 @@
 # Vorlesungsskript-Algebra
  
-Vorlesungsskript der Veranstaltung "Funktionentheorie" im Sommersemester 2020 
+Vorlesungsskript der Veranstaltung "Algebra" im Wintersemester 2020/21
