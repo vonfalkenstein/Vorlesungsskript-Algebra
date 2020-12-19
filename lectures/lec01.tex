@@ -44,5 +44,46 @@
 \end{exmp*}
 
 \begin{defn*}[abelsche Gruppe]\index{Gruppe!abelsche}
-	Sei $ (G,\circ) $ eine Gruppe. $G$ heißt \emph{kommutativ} oder \emph{abelsch}, falls gilt $ a \circ b = b \circ a \ \foralll a,b \in G $
+	Sei $ (G,\circ) $ eine Gruppe. $G$ heißt \emph{kommutativ} oder \emph{abelsch}, falls gilt $ a \circ b = b \circ a \ \foralll a,b \in G $.
 \end{defn*}
+
+\begin{exmp*}
+	\begin{enumerate}[label=\textcircled{\alph*}]
+		\item Die Gruppe aller Diagonalmatrizen in $ GL_n(\R) $ 
+			$$ \left\{A \in GL_n(\R) \mid A = \begin{pmatrix}
+				\alpha_1 & & 0 \\ & \ddots & \\ 0 & & \alpha_n
+			\end{pmatrix}, \alpha_1, \dotsc, \alpha_n \in \R \setminus\{0\} \right\} $$
+			ist eine kommutative Gruppe unter Matrixmultiplikation.
+		\item $ M_{n \times n}(\R) $ ist eine abelsche Gruppe unter Addition von Matrizen mit neutralem Element $ \begin{pmatrix}
+			0 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & 0
+		\end{pmatrix} $
+	\end{enumerate}
+\end{exmp*}
+
+\begin{rem*}
+	Sei $ I $ eine Indexmenge und $ G_i, i \in I, $ Gruppen. Dann ist $ \prod_{i \in I} G_i $ wieder eine Gruppe unter der Verknüpfung $ \big((g_i)_{i \in I}, (h_i)_{i \in I}\big) \mapsto (\underbrace{g_i h_i}_{\in G_i})_{i \in I} $ für $ g_i,h_i \in G_i, i \in I $.
+\end{rem*}
+
+\begin{exmp*}
+	Für $ m \in N $ ist $ \Z / m\Z $ eine Gruppe unter Addition. Wir können nach dieser Bemerkung daraus (endliche abelsche) Gruppen
+	\[ \Z/m_1\Z \times \Z/m_2\Z \times \dots \times \Z/m_n\Z \]
+	für $ m_1, \dotsc, m_n \in N $ konstruieren.
+\end{exmp*}
+
+\begin{defn*}[Untermonoid, Untergruppe] \index{Untermonoid} \index{Untergruppe}
+	Sei $M$ ein Monoid und $ H \subseteq M $. Wir nennen $H$ ein \emph{Untermonoid}, falls $ e \in H $ und gilt $ a,b \in H \implies a \circ b \in H $. Sei $G$ eine Gruppe. Eine Teilmenge $ \emptyset \neq H \subseteq G $ heißt \emph{Untergruppe} von $G$, falls gilt $ \foralll a,b \in H: a \circ b^{-1} \in H $.\\
+	\underline{Notation:} Ist $H$ eine Untergruppe von $G$, so schreibe auch $H \leq G$ und $H < G$ falls $ H \neq G $.
+\end{defn*}
+
+\begin{exmp*}
+	\begin{enumerate}[label=\textcircled{\alph*}]
+		\item Für eine beliebige Gruppe $G$ sind $\{e\}$ und $G$ stets Untergruppen von $G$.
+		\item Sei $ (G,\circ) = (\Z,+) $ und $m \in \N$. Dann ist $ m \cdot \Z \subseteq \Z $ eine Untergruppe von $\Z$ und $ m \cdot \Z_{geq 0} $ ein Untermonoid von $\Z$.
+		\item $ (\Z,+) $ ist eine Untergruppe $ (\C,+) $, $(\Z_{geq 0},+)$ ist Untermonoid von $(\C,+)$.
+		\item Sei $\K$ ein Körper und $n \in \N$. Dann ist $ SL_n(\K) = \{A \in Mat_{n \times n}(\K) \mid \det(A) = 1\} $ eine Untergruppe von $ GL_n(\K) = \{A \in M_{n \times n}(\K) \mid \det(A) \neq 0\} $.
+	\end{enumerate}
+\end{exmp*}
+
+\begin{rem*}
+	Sei $G$ eine Gruppe und $ H_i, i \in I $ Untergruppen von $G$. Dann ist auch $ \bigcap_{i \in I} H_i $ eine Untergruppe von $G$.
+\end{rem*}
