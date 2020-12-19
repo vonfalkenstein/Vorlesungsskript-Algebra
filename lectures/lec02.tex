@@ -13,6 +13,84 @@
 	Sei $\varphi: G \to G'$ ein Gruppenhomomorphismus und $e$ bzw. $e'$ die Einselemente von $G$ bzw. $G'$. Dann gilt
 	\begin{enumerate}[label=({\roman*})]
 		\item $\varphi(e) = e'$
-		\item $ \varphi(a^{-1}) = (\varphi(a))^{-1} \quad \foralll a \in G $
+		\item $ \varphi\big(a^{-1}\big) = \big(\varphi(a)\big)^{-1} \quad \foralll a \in G $
 	\end{enumerate}
 \end{lem}
+
+\begin{exmp*}
+	\begin{enumerate}[label=\textcircled{\alph*}]
+		\item Sei $G$ eine Gruppe und $g \in G$. Dann definiert die Abbildung
+			\begin{align*}
+				\varphi: \Z &\to G\\
+				n &\mapsto g^n
+			\end{align*}
+			einen Gruppenhomomorphismus. Wir setzen hier $g^0 := e$ und $g^{-m}:= (g^{-1})^m$ für $m \in \N$. Jeder Gruppenhomomorphismus $\varphi: \Z \to G$ hat diese Form.\\
+			$\to$ im Allgemeinen ist $\varphi$ weder injektiv noch surjektiv!\\
+			$ \Z \to \Z/m\Z, n \mapsto n \mod m \quad \Z \to \Z \times \Z, n \mapsto (n,0) $
+		
+		\item Seien $m,n \in \N, m < n$. Schreibe $\pi \in S_n$ in der Form $ \begin{pmatrix}
+				1 & 2 & \dots & n \\ \pi(1) & \pi(2) & \dots & \pi(n)
+			\end{pmatrix} $. Dann ist $ \varphi: S_m \to S_n$, $$\begin{pmatrix}
+				1 & \dots & m \\ \pi(1) & \dots & \pi(m)
+			\end{pmatrix} \mapsto \begin{pmatrix}
+				1 & \dots & m & m+1 & \dots & n \\ \pi(1) & \dots & \pi(m) & \pi(m+1) & \dots & \pi(n)
+			\end{pmatrix} $$ ein injektiver Gruppenhomomorphismus.
+	\end{enumerate}
+\end{exmp*}
+
+\begin{defn*}[verschiedene Morphismen, Kern] \index{Morphismen!Isomorphismus} \index{Morphismen!Automorphismus} \index{Morphismen!Monomorphismus} \index{Morphismen!Epimorphismus} \index{Morphismen!Endomorphismus} \index{Bild}\index{Kern}
+	Ein Gruppenhomomorphismus $ \varphi: G \to G' $ heißt \emph{Isomorphismus}/ \emph{Monomorphismus}/ \emph{Epimorphismus}, falls $\varphi$ bijektiv/injektiv/surjektiv ist.\\
+	Ein Gruppenhomomorphismus $\varphi: G \to G$ nennen wir auch \emph{Endomorphismus} und falls $\varphi$ bijektiv ist \emph{Automorphismus}.
+	Die Menge $ \ker \varphi = \{ g \in G \mid \varphi(g) = e' \} \subseteq G $ heißt \emph{Kern von $\varphi$} und $ \im \varphi = \varphi(G) \subseteq G' $ \emph{Bild von $\varphi$}.
+\end{defn*}
+
+\begin{notat*}
+	Gibt es einen Isomorphismus $\varphi: G \to G'$, so schreiben wir auch $G \cong G'$.
+\end{notat*}
+
+\begin{rem*}
+	\begin{enumerate}[label=\textcircled{\alph*}]
+		\item Sei $ \varphi: G \to G' $ ein Gruppenhomomorphismus. Dann sind $\varphi(G)$ und $\ker G$ Untergruppen von $G'$ bzw. $G$.
+		\item Seien $ \varphi: G \to G' $ und $ \psi: G' \to G'' $ Gruppenhomomorphismen. Dann ist auch
+			\[ \psi \circ \varphi: G \to G'' \]
+			ein Gruppenhomomorphismus
+	\end{enumerate}
+\end{rem*}
+
+\begin{lem}
+	Sei $ \varphi: G \to G' $ ein Gruppenhomomorphismus. Die Abbildung $ \varphi $ ist genau dann ein Isomorphismus, wenn es einen Gruppenhomomorphismus $ \psi: G' \to G $ gibt mit $ \psi \circ \varphi = \id_G $ und $ \varphi \circ \psi = \id_{G'} $.
+\end{lem}
+
+\begin{exmp*}
+	\begin{enumerate}[label=({\roman*})]
+	\item Sei $G$ eine Gruppe und $a \in G$. Dann ist $ \varphi_a : G \to G, g \mapsto aga^{-1} $ ein Automorphismus von $G$. Schreibe $ \Aut(G) = \{\varphi: G \to G\ \text{Automorphismus}\} $. Dann ist $ \Aut(G) $ eine Gruppe unter Verknüpfung und 
+		\begin{align*}
+			G &\to \Aut(G)\\
+			a &\mapsto \varphi_a
+		\end{align*}
+		ein Gruppenhomomorphismus.
+	
+	\item $ Sei n \in \N $ und $ E_n $ die Menge der $n$-ten Einheitswurzeln, d.h. $ E_n = \{ \zeta \in \C \mid \zeta^n = 1\} $. Dann ist $E_n$ eine Gruppe unter Multiplikation und für jedes $m \in \N$ ist die Abbildung 
+		\begin{align*}
+			E_n &\to E_n\\
+			\zeta &\mapsto \zeta^m
+		\end{align*}
+		ein Endomorphismus von $E_n$.
+		
+	\item $ \exp: (\R,+) \to (\R\setminus\{0\}, \cdot), x \mapsto e^x $ ist ein Gruppenhomomorphismus mit $ \ker \exp = \{0\} $, also ein Monomorphismus.
+	\end{enumerate}
+\end{exmp*}
+
+\begin{notat*}
+	Für eine nichtleere Menge $X$ schreibe
+	\[ S_X := \{\sigma: X \to X \mid \sigma \ \text{ist bijektiv}\}. \]
+	Dann ist $S_X$ eine Gruppe unter Verkettung von Abbildungen.
+\end{notat*}
+
+\begin{rem*}
+	Ist $|X| = n < \infty$, dann gibt es einen Gruppenisomorphismus $$ S_X \cong S_n. $$
+\end{rem*}
+
+\begin{thm}[Satz von Cayley]
+	Sei $G$ eine Gruppe mit $|G|=n<\infty$. Dann ist $G$ isomorph zu einer Untergruppe von $S_n$.
+\end{thm}
