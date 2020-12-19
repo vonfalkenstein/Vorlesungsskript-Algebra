@@ -32,3 +32,17 @@
 \begin{exmp*}
 	Im $ (\N_{\geq 0},+) $ ist 0 das einzige Element, das ein inverses Element hat.
 \end{exmp*}
+
+\underline{Notation:} Ist $ a \in M $ und $ b \in M $ invers zu $a$, so schreiben wir $ b = a^{-1} $.
+
+\begin{defn*}[Gruppe]\index{Gruppe}
+	Wir nennen ein Monoid $ (G,\circ) $ eine \emph{Gruppe}, falls jedes $ a \in G $ ein inverses Element $ a^{-1} \in G $ besitzt.
+\end{defn*}
+
+\begin{exmp*}
+	$ GL_n(\R) = \{A \in M_{n \times n} (\R) \mid \det(A) \neq 0, n \geq 0\} $ ist eine Gruppe unter Matrixmultiplikation. Für $ n \geq 2 $ gibt es Matrizen $ A,B \in GL_n(\R) $ mit $ AB \neq BA $.
+\end{exmp*}
+
+\begin{defn*}[abelsche Gruppe]\index{Gruppe!abelsche}
+	Sei $ (G,\circ) $ eine Gruppe. $G$ heißt \emph{kommutativ} oder \emph{abelsch}, falls gilt $ a \circ b = b \circ a \ \foralll a,b \in G $
+\end{defn*}
