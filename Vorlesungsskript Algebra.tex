@@ -5,7 +5,7 @@
 
 %\usepackage{showframe}
 
-\makeindex[title=Definitionen]
+\makeindex[title=Definitionen,intoc]
 
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesection}{\S\arabic{section}}
@@ -21,7 +21,8 @@
 	bookmarksopen = true
 }
 
-\renewcommand{\lecture}{\stepcounter{lecture} \marginnote{Datei \arabic{lecture}}}
+\renewcommand{\lecture}{\stepcounter{lecture} \index[file]{Datei \thelecture} \marginnote{Datei \thelecture}}
+\makeindex[name=file,title=Dateien,intoc]
 
 %\includeonly{./lectures/cpt06}
 
@@ -52,4 +53,5 @@ Dieses Skript stellt keinen Ersatz für die Vorlesungsnotizen von Prof. Schindle
 	
 
 	\printindex
+	\printindex[file]
 \end{document}
