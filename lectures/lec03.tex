@@ -1,0 +1,88 @@
+\section{Nebenklassen und Normalteiler}\lecture
+
+\begin{exmp*}
+	Sei $ (G,\cdot)  = (\Z,+) $ und $m \in \N$. Wir definieren eine Äquivalenzrelation $\sim$ auf $\Z$ durch
+	\begin{align*}
+		a \sim b &\iff m \mid a-b\\
+		&\iff a-b \in m\Z
+	\end{align*}
+	Dann ist $a \subset \Z$ die Menge $a+m\Z \subseteq \Z$ eine Äquivalenzklasse. $m\Z \subseteq \Z$ ist eine Untergruppe und jede Äquivalenzklasse von $\sim$ hat die Form $a+m\Z$ für ein $a \in \Z$.
+\end{exmp*}
+
+\begin{defn*}[Nebenklasse] \index{Nebenklasse}
+	Sei $G$ eine Gruppe und $H \leq G$ eine Untergruppe sowie $a \in G$. Dann nennen wir die Menge
+	\[ aH := \{ ah \mid h \in H\} \]
+	\emph{Linksnebenklasse von $H$} und 
+	\[ Ha := \{ha \mid h \in H\} \]
+	\emph{Rechtsnebenklasse von $H$}. Ein Element $a' \in aH$ (bzw. $a' \in Ha$) nennen wir \emph{Repräsentant} der Nebenklasse $aH$ (bzw. $Ha$).
+\end{defn*}
+
+\begin{lem}
+	Sei $ H \leq G $ eine Untergruppe einer Gruppe $G$ und $ a,b\in G $. Dann sind die folgenden Aussagen äquivalent:
+	\begin{enumerate}[label={\roman*})]
+		\item $aH = bH$
+		\item $aH \cap bH \neq \emptyset$
+		\item $a \in bH$
+		\item $b^{-1}a \in H$
+	\end{enumerate}
+\end{lem}
+
+\begin{thm}\label{1.2.2}
+	Sei $G$ eine Gruppe und $H \leq G$ eine Untergruppe. Dann gibt es für alle $a,b \in G$ eine Bijektion $aH \to bH$ und $G$ ist eine disjunkte Vereinigung von Linksnebenklassen von $H$.
+\end{thm}
+
+\begin{rem*}
+	Satz \ref{1.2.2} gilt ebenso für Rechtsnebenklassen.
+\end{rem*}
+
+\begin{defn*}
+	Sei $G$ eine Gruppe und $H \leq G$ eine Untergruppe. Wir schreiben $G/H$ (bzw. $H\backslash G$) für die Mengen der Links- (bzw. Rechts-)nebenklassen von $H$.
+\end{defn*}
+
+\begin{rem*}
+	Definieren wir
+	\begin{align*}
+		\varphi: G/H &\to H \backslash G\\
+		aH &\mapsto Ha
+	\end{align*}
+	so ist $\varphi$ eine Bijektion zwischen $G/H$ und $ H \backslash G$.
+\end{rem*}
+
+\begin{defn*}[Index] \index{Index}
+	Sei $G$ eine Gruppe und $H \leq G$. Dann schreiben wir 
+	\[ (G:H) = |G/H| = |H \backslash G| \]
+	und nennen $(G:H)$ den Index von $H$ in $G$.
+\end{defn*}
+
+\begin{thm}[Satz von Lagrange]
+	Sei $G$ eine endliche Gruppe und $H \leq G$. Dann gilt 
+	\[ |G| = |H| \cdot (G:H). \]
+\end{thm}
+
+\begin{cor}
+	Sei $G$ eine endliche Gruppe und $H \leq G$. Dann gilt $ |H| \mid |G|. $
+\end{cor}
+
+\begin{defn*}[Ordnung]
+	Sei $G$ eine Gruppe und $a \in G$. Schreibe $ \langle a \rangle = \{ a^n \mid n \in \Z \} $ für die von $a$ erzeugte Untergruppe. Wir definieren $ord(a) := |\langle a \rangle|$ und nennen $ord(a)$ die \emph{Ordnung von $a$}.
+\end{defn*}
+
+\begin{cor}
+	Sei $a \in G$ und $|G| < \infty$ eine endliche Gruppe. Dann gilt
+	\[ ord(a) \mid |G|. \]
+\end{cor}
+
+\begin{exmp*}
+	Untergruppen der $S_3$. Zykelschreibweise:\\
+	schreibe $(12)$ für $ \begin{pmatrix}
+		1&2&3\\2&1&3
+	\end{pmatrix} $ und $(123)$ für $ \begin{pmatrix}
+		1&2&3\\2&3&1
+	\end{pmatrix} $ und ebenso für Permutationen. Dann ist 
+	\[ S_3 = \{\id, (12),(13),(23),(123),(132)\} \]
+	und Untergruppen $H$ der $S_3$ haben Ordnung 1,2,3 oder 6.\\
+	Ordnung 6: $H = S_3$\\
+	Ordnung 1: $ H = \{\id\} $\\
+	Ordnung 2: $ \langle (12) \rangle, \langle (13) \rangle, \langle(23)\rangle $\\
+	Ordnung 3: $ H = \{\id,(123),(132)\} $
+\end{exmp*}
