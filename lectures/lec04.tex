@@ -1,0 +1,109 @@
+\subsection*{Normalteiler}\lecture
+
+Ist $G$ eine Gruppe und $H \leq G$, so gibt es eine Bijektion
+$$G/H \to H \backslash G \qquad aH \mapsto Ha^{-1}.$$
+Es gilt im Allgemeinen jedoch $\{$Linksnebenklassen $\} \neq \{$Rechtsnebenklassen$\}$.
+
+\begin{exmp*}
+	$ S_3 = \{\id, (12),(13),(23),(123),(132)\} $. Sei nun $U = \langle (12) \rangle$.\\
+	Dann ist die Menge der Linksnebenklassen 
+	$$\big\{U,(13)U = \{(13),(123)\}, (23)U = \{(123),(132)\}\big\}$$ 
+	und die Menge der Rechtsnebenklassen 
+	$$ \big\{U,U(13) = \{(13)(132)\}, U(23) = \{(23),(123)\}\big\}. $$
+\end{exmp*}
+
+\begin{defn*}[Normalteiler]\index{Normalteiler}
+	Sei $G$ eine Gruppe und $H \leq G$. Wir nennen $H$ \emph{Normalteiler} von $G$ (oder normale Untergruppe), falls $aH = Ha \quad \foralll a \in G$. In dem Fall schreiben wir auch $ H \unlhd G $ und nennen $aH = Ha$ die Restklasse von $a$ modulo $H$.
+\end{defn*}
+
+\begin{exmp*}
+	$ \{\id, (123), (132)\} $ ist ein Normalteiler von $S_3$.
+\end{exmp*}
+
+\begin{rem*}
+	\begin{enumerate}[label=({\roman*})]
+		\item Ist $G$ abelsch, so ist jede Untergruppe Normalteiler.
+		\item $H \leq G$ ist genau dann ein Normalteiler, wenn $aHa^{-1} \subseteq H \quad \foralll a \in G$.
+	\end{enumerate}
+\end{rem*}
+
+\begin{lem}
+	Sei $\varphi: G \to G'$ ein Gruppenhomomorphismus. Dann ist $\ker\varphi$ ein Normalteiler von $G$.
+\end{lem}
+
+\begin{exmp*}
+	Für $\sigma \in S_n$ schreibe $\sgn \sigma$ für die Signatur von $\sigma$. Dann ist
+	\[ \varphi: (S_n, \circ) \to (\{1,-1\}, \cdot) \qquad \sigma \mapsto \sgn \sigma \]
+	ein Gruppenhomomorphismus und $A_n := \{\sigma \in S_n \mid \sgn \sigma = 1\}$ Normalteiler von $S_n$.
+\end{exmp*}
+
+\begin{lem}
+	Sei $G$ eine Gruppe und $N \unlhd G$ ein Normalteiler. Dann wird $G/H$ zu einer Gruppe unter der Verknüpfung $(aH,a'H) \mapsto aH \cdot a'H$.
+\end{lem}
+
+\begin{rem*}
+	Für zwei Teilmengen $X,Y \subseteq G$ schreiben wir $$X \cdot Y = \{xy \mid x \in X, y \in Y\}.$$
+\end{rem*}
+
+Zu jedem Normalteiler $N \unlhd G$ erhalten wir einen Epimorphismus
+\[ \pi: G \to G/N \qquad a \mapsto aN \]
+mit $\ker \pi = N$.
+
+\begin{defn*}[Faktorgruppe]\index{Faktorgruppe}
+	Ist $G$ eine Gruppe mit $N \unlhd G$, so nennen wir $G/N$ die \emph{Faktorgruppe} (oder Restklassengruppe) von $G$ modulo $N$.
+\end{defn*}
+
+\begin{exmp*}
+	$(G,\circ) = (\Z,+)$ mit $N = m\Z$ für ein $m \in \N$. Dann ist $G/N = Z /m\Z$ die Faktorgruppe von $\Z$ modulo $m\Z$
+\end{exmp*}
+
+\begin{thm}[Homomorphiesatz]
+	Sei $G$ eine Gruppe mit Normalteiler $N \unlhd G$ und $\varphi: G \to G'$ ein Gruppenhomomorphismus mit $N \subseteq \ker\varphi$. Dann $\exists!$ Gruppenhomomorphismus $\bar{\varphi}: G/N \to G'$, sodass das Diagramm
+	\[ \begin{tikzcd}
+		G\arrow{rr}{\varphi}  \arrow{ddr}{\pi} & & G'\\
+		&&\\
+		& G/N \arrow{uur}{\bar{\varphi}}&
+	\end{tikzcd} \]
+	kommutiert, d.h. $\varphi = \bar{\varphi} \circ \pi.$ Außerdem gilt
+	\[ \im \bar{\varphi} = \im \varphi \qquad \ker \bar{\varphi} = \pi(\ker\varphi) \qquad \ker\varphi = \pi^{-1} (\ker\bar{\varphi}). \]
+\end{thm}
+
+\begin{cor}
+	Sei $ \varphi: G \to G' $ ein Epimorphismus. Dann induziert $\varphi$ einen Isomorphismus
+	\[ \bar{\varphi}: G/\ker\varphi \to G'. \]
+\end{cor}
+
+\begin{exmp*}
+	Sei $K$ ein Körper, $n \in \N$. Dann ist die Abbildung
+	\[ \det: GL_n(K) \to \K \setminus\{0\} \qquad A \mapsto \det(A) \]
+	ein Epimorphismus und $\ker(\det) = SL_n(K)$. Also
+	\[ GL_n(K)/SL_n(K) \cong K \setminus \{0\} \]
+\end{exmp*}
+
+\begin{thm}[1. Isomorphiesatz]\label{1.2.10}
+	Sei $G$ eine Gruppe, $H \leq G$ eine Untergruppe und $N \unlhd G$ ein Normalteiler von $G$. Dann ist $H \cdot N \leq G$ eine Untergruppe von $G$, $H \cap N \unlhd H$ ein Normalteiler von $H$ und die Abbildung
+	\[ H/(H \cap N) \to HN/N \qquad a(H \cap N) \mapsto aN \]
+	ein Isomorphismus.
+\end{thm}
+
+\begin{rem*}
+	Gilt außerdem in Satz \ref{1.2.10}, dass $H \cap N = \{e\}$ und $HN = G$, so ist $G/N \cong H$.
+\end{rem*}
+
+\begin{exmp*}
+	\[ \Aff(\R^n) = \{\text{Affinitäten } x \mapsto Ax + b\ \text{mit } A \in GL_n(\R), b \in \R^n\} \]
+	ist eine Gruppe unter Verkettung von Abbildungen. Für $b \in \R^n$ definiert $\hat{\iota}_b: x \mapsto x+b$ ein Element in $\Aff(\R^n)$ und wir interpretieren $\R^n$ als Untergruppe von $\Aff(\R^n)$. Ebenso interpretieren wir $GL_n(\R)$ als Untergruppe von $\Aff(\R^n)$.\\
+	Dann ist $ \Aff(\R^n) = \R^n \cdot GL_n(\R) $ und $\R^n$ ist Normalteiler von $\Aff(\R^n)$. Es gilt also
+	\[ \Aff(\R^n) / \R^n \cong GL_n(\R). \]
+\end{exmp*}
+
+\begin{thm}[2. Isomorphiesatz]
+	Sei $G$ eine Gruppe, $H,N \unlhd G$ Normalteiler von $G$ mit $N \subseteq H \subseteq G$. Dann ist $N \unlhd H$ Normalteiler in $H$, $H/N \unlhd G/N$ Normalteiler in $G/N$ und die Abbildung
+	\[ (G/N)\big/(H/N) \to G/H \qquad aN \mapsto  aH \]
+	ein Isomorphismus.
+\end{thm}
+
+\begin{exmp*}
+	Seien $ m,n \in \N $ mit $n \mid m$. Dann sind $m\Z \subseteq n\Z \subseteq \Z$ Normalteiler und 
+	\[ (\Z/m\Z)\big/(n\Z/m/\Z) \cong \Z/n\Z. \]
+\end{exmp*}
